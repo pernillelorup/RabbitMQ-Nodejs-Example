@@ -40,7 +40,7 @@ In this project I'm only using [amqplib](https://www.npmjs.com/package/amqplib)
 **run sender.js**
 
 ```javascript
-> node sender.js
+> node src/sender.js
 ```
 
 Go back to your RabbitMQ dashboard in the panel 'Queues' and you should see a new queue named **codingtest**. Press it and you can see an overview presenting your queued messages that has been sent.
@@ -48,7 +48,7 @@ Go back to your RabbitMQ dashboard in the panel 'Queues' and you should see a ne
 **run receiver.js**
 
 ```javascript
-> node receiver.js
+> node src/receiver.js
 ```
 
 Again, go back to RabbitMQ dashboard and see how the curve in the diagram has changed because the messages have been received.
