@@ -19,7 +19,7 @@
 > brew services start rabbitmq
 ```
 
-Go to [localhost:15672](http://localhost:15672/#)
+Go to [localhost:15672](http://localhost:15672/#/)
 
 ```javascript
 username: guest;
