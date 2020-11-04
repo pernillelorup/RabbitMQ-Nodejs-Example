@@ -20,7 +20,7 @@ amqp.connect("amqp://localhost", (connError, connection) => {
         console.log(`Message received: ${msg.content}`);
       },
       {
-        noAck: true, //true to close connection - false to keep it running
+        noAck: true, //true to close connection when a message has been received - false to keep it running
       }
     );
   });
