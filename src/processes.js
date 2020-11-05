@@ -41,20 +41,20 @@ async function handleQueue(event) {
 	const channel = await connection.createChannel();
 
 	await setTimeout(async () => {
-		await Promise.all(
-			event.map((person) => {
-				const queue = person.email;
+		const result = event.map((person) => {
+			const queue = person.email;
 
-				// Step 2: Assert Queue.
-				channel.assertQueue(queue);
+			// Step 2: Assert Queue.
+			channel.assertQueue(queue);
 
-				// Step 3: Send message to queue.
-				channel.sendToQueue(queue, Buffer.from(person.mail));
+			// Step 3: Send message to queue.
+			channel.sendToQueue(queue, Buffer.from(person.mail));
 
-				// Step 4: Logs information.
-				console.log(`Message sent to ${queue}`);
-			})
-		);
+			// Step 4: Logs information.
+			console.log(`Message sent to ${queue}`);
+		});
+
+		await Promise.all(result);
 	}, 5000);
 }
 
