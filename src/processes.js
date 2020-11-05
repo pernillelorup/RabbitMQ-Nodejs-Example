@@ -11,32 +11,28 @@ async function loadPersons() {
 }
 
 async function getGender(event) {
-	const result = await Promise.all(
-		event.map(async (person) => {
-			const response = await fetch(`${GENDER_API}/?name=${person.name}`);
-			const json = await response.json();
+	const result = event.map(async (person) => {
+		const response = await fetch(`${GENDER_API}/?name=${person.name}`);
+		const json = await response.json();
 
-			return { ...json, email: person.email };
-		})
-	);
+		return { ...json, email: person.email };
+	});
 
-	return result;
+	return await Promise.all(result);
 }
 
 async function loadMailTemplate(event) {
-	const result = await Promise.all(
-		event.map(async (person) => {
-			const title = person.gender == 'male' ? 'mr.' : person.gender == 'female' ? 'ms.' : 'mx.';
+	const result = event.map(async (person) => {
+		const title = person.gender == 'male' ? 'mr.' : person.gender == 'female' ? 'ms.' : 'mx.';
 
-			let mailTemplate = await fs.readFileSync('src/assets/mail.txt', 'utf-8');
-			mailTemplate = mailTemplate.replace('XX', title);
-			mailTemplate = mailTemplate.replace('NN', person.name);
+		let mailTemplate = await fs.readFileSync('src/assets/mail.txt', 'utf-8');
+		mailTemplate = mailTemplate.replace('XX', title);
+		mailTemplate = mailTemplate.replace('NN', person.name);
 
-			return { email: person.email, mail: mailTemplate };
-		})
-	);
+		return { email: person.email, mail: mailTemplate };
+	});
 
-	return result;
+	return await Promise.all(result);
 }
 
 async function handleQueue(event) {
