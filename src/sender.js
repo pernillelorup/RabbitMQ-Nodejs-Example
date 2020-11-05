@@ -1,21 +1,16 @@
-const amqp = require('amqplib/channel_api');
-
-const URL = 'amqp://localhost';
-const QUEUE = 'myqueue';
-
-let payload = 'rasmus';
+const eip = require('eip');
+const processes = require('./processes');
 
 (async () => {
-	// Step 1: Create connection & channel in RabbitMQ.
-	const connection = await amqp.connect(URL);
-	const channel = await connection.createChannel();
+	// route
+	const route = new eip.Route('default', { route: { retryLimit: 5, retryDelay: 10000 }, isErrorRoute: false }, []);
 
-	// Step 2: Assert Queue.
-	channel.assertQueue(QUEUE);
+	// processes / filters
+	await route.process(processes.loadPersons);
+	await route.process(processes.getGender);
+	await route.process(processes.loadMailTemplate);
+	await route.process(processes.handleQueue);
 
-	// Step 3: Send message to queue.
-	channel.sendToQueue(QUEUE, Buffer.from(payload));
-
-	// Step 4: Logs information.
-	console.log(`Message send ${QUEUE}`);
+	// event injection
+	await route.inject();
 })();

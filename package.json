@@ -4,8 +4,12 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"rece": "node src/receiver.js",
-		"send": "node src/sender.js"
+		"send": "node src/sender.js",
+		"receive": "node src/receiver.js",
+		"rasmus": "node src/receiver.js rasmus@mail.com",
+		"pernille": "node src/receiver.js pernille@mail.com",
+		"adam": "node src/receiver.js adam@mail.com",
+		"stephan": "node src/receiver.js stephan@mail.com"
 	},
 	"keywords": [],
 	"author": "",
