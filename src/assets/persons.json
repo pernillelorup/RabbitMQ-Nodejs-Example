@@ -1,0 +1,6 @@
+{
+	"adam": { "name": "Adam", "email": "adam@mail.com" },
+	"rasmus": { "name": "Rasmus", "email": "rasmus@mail.com" },
+	"pernille": { "name": "Pernille", "email": "pernille@mail.com" },
+	"stephan": { "name": "Stephan", "email": "stephan@mail.com" }
+}

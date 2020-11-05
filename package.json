@@ -1,15 +1,20 @@
 {
-  "name": "RabbitMQExample",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "amqplib": "^0.6.0"
-  }
+	"name": "RabbitMQExample",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"rece": "node src/receiver.js",
+		"send": "node src/sender.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"amqplib": "^0.6.0",
+		"eip": "^1.8.1",
+		"eip-rabbit": "^1.0.0",
+		"node-fetch": "^2.6.1",
+		"rabbit-queue": "^5.0.1"
+	}
 }
