@@ -21,7 +21,7 @@ async function getGender(event) {
 	return await Promise.all(result);
 }
 
-async function loadMailTemplate(event) {
+async function handleMailTemplate(event) {
 	const result = event.map(async (person) => {
 		const title = person.gender == 'male' ? 'mr.' : person.gender == 'female' ? 'ms.' : 'mx.';
 
@@ -58,4 +58,4 @@ async function handleQueue(event) {
 	}, 5000);
 }
 
-module.exports = { loadPersons, loadMailTemplate, getGender, handleQueue };
+module.exports = { loadPersons, handleMailTemplate, getGender, handleQueue };

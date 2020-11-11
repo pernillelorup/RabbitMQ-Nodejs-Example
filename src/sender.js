@@ -8,7 +8,7 @@ const processes = require('./processes');
 	// processes / filters
 	await route.process(processes.loadPersons);
 	await route.process(processes.getGender);
-	await route.process(processes.loadMailTemplate);
+	await route.process(processes.handleMailTemplate);
 	await route.process(processes.handleQueue);
 
 	// event injection
