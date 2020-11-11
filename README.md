@@ -14,7 +14,7 @@ Authors
 **Stephan Djurhuus**  
 **Adam Lass**
   
-![cover image](/assets/cover.png?0.600208278511531 )  
+![cover image](/assets/cover.png?0.47495693578753917 )  
   
 ##  Content
   
@@ -39,6 +39,7 @@ Authors
     - [Receiver | pernille@mail.com](/#receiver-pernillemailcom )
     - [Receiver | adam@mail.com](/#receiver-adammailcom )
     - [Receiver | stephan@mail.com](/#receiver-stephanmailcom )
+    - [Demonstration](/#demonstration )
   
 ##  Objectives
   
@@ -195,6 +196,11 @@ npm run adam
 # bash
 npm run stephan
 ```
+  
+####  Demonstration
+  
+  
+![recording](/assets/recording.gif?0.7517602870022821 )  
   
 ## 
   

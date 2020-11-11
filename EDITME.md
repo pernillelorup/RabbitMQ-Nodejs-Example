@@ -168,6 +168,10 @@ npm run adam
 npm run stephan
 ```
 
+#### Demonstration
+
+@import "/assets/recording.gif" {alt="recording"}
+
 ## {ignore=true}
 
 Software Development @ Copenhagen Business Academy, Denmark 2020
